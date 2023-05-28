@@ -39,6 +39,7 @@ async function start() {
 	const response = await fetch("https://dog.ceo/api/breeds/list/all")
 	//parse into json format so readable
 	const data = await response.json();
+	//the 2 arguments for createBreedList function // data and 'message' property from fetch request 
 	createBreedList(data.message)
 
 
@@ -49,6 +50,8 @@ start();
 // takes data and creates drop down of dogs info
 //object function .keys to get properties in object / use map to dynamically create new options and use join to separate 
 //template literals to get html 
+//object function takes keys method parameter then map function to cover entire array creates select element with option element to list different breeds
+// join method to separate commas between strings/arrays returns list of breeds for selection 
 function createBreedList(breedList) {
 
 	document.getElementById("breed").innerHTML = `
