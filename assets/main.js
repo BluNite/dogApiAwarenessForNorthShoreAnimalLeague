@@ -81,10 +81,10 @@ function createSlideShow(images) {
 	console.log(images.length)
 
 	let currentPosition = 0;
-	clearInterval(timer);
-	clearTimeout(deleteFirstPhotoDelay);
 
-	setInterval(nextSlide, 5000)
+
+
+
 
 	if (images.length > 1) {
 
@@ -97,7 +97,7 @@ function createSlideShow(images) {
 		currentPosition += 2
 
 
-		timer = setInterval(nextSlide, 5000)
+		setInterval(nextSlide, 5000);
 
 
 
@@ -127,7 +127,7 @@ function createSlideShow(images) {
 		deleteFirstPhotoDelay = setTimeout(function () {
 			document.querySelector(".slide").remove()
 
-		}, 1000)
+		}, 3000)
 		if (currentPosition + 1 >= images.length) {
 			currentPosition = 0
 		} else {
