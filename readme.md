@@ -1,3 +1,3 @@
 # Dog Lovers App dedicated to Awareness for North Shore Animal League
-# deployment on githubPages
+# https://blunite.github.io/dogApiAwarenessForNorthShoreAnimalLeague/
 ## Project Description
