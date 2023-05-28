@@ -76,19 +76,19 @@ async function loadByBreed(breed) {
 	}
 
 }
-
+// function for images to appear
 function createSlideShow(images) {
+	//get the length of images 
 	console.log(images.length)
-
+	// counter for current position of image array
 	let currentPosition = 0;
-
-
-
-
-
+	// end timers
+	clearInterval(timer)
+	clearTimeout(deleteFirstPhotoDelay)
+	//  if more than one image increase current image counter by 2
 	if (images.length > 1) {
 
-
+		// get slideshow element / innerhtml is slide element/ use back ticks to dynamically render images to url 2 photos loaded to transition
 		document.getElementById('slideShow').innerHTML =
 
 			` <div class="slide" style=" background-image: url(${images[0]}); "id="slide"></div> 
@@ -96,15 +96,13 @@ function createSlideShow(images) {
 			<div class="slide" style="background-image: url(${images[1]}); "id="slide"></div> `
 		currentPosition += 2
 
+		// set interval timer next image function every 5 seconds
+		timer = setInterval(nextSlide, 5000);
+	} else {
+		document.getElementById('slideShow').innerHTML =
 
-		setInterval(nextSlide, 5000);
-
-
-
-
-
-
-
+			` <div class="slide" style=" background-image: url(${images[0]}); "id="slide"></div> 
+			<div class=slide></div> `
 	}
 
 	if (images.length == 2) currentPosition = 0
@@ -127,7 +125,7 @@ function createSlideShow(images) {
 		deleteFirstPhotoDelay = setTimeout(function () {
 			document.querySelector(".slide").remove()
 
-		}, 3000)
+		}, 1000)
 		if (currentPosition + 1 >= images.length) {
 			currentPosition = 0
 		} else {
