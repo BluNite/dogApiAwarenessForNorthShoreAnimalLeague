@@ -82,9 +82,9 @@ function createSlideShow(images) {
 	console.log(images.length)
 	// counter for current position of image array
 	let currentPosition = 0;
-	// end timers
-	clearInterval(timer)
-	clearTimeout(deleteFirstPhotoDelay)
+
+
+
 	//  if more than one image increase current image counter by 2
 	if (images.length > 1) {
 
@@ -98,31 +98,37 @@ function createSlideShow(images) {
 
 		// set interval timer next image function every 5 seconds
 		timer = setInterval(nextSlide, 5000);
-	} else {
-		document.getElementById('slideShow').innerHTML =
 
-			` <div class="slide" style=" background-image: url(${images[0]}); "id="slide"></div> 
-			<div class=slide></div> `
+
+
+
+
+
+
 	}
 
 	if (images.length == 2) currentPosition = 0
+
+
+
 
 	else {
 		document.getElementById('slideShow').innerHTML =
 
 			` <div class="slide" style=" background-image: url(${images[0]}); "id="slide"></div> 
 
-			<div class="slide"></div> `
+			<div class="slide" </div> `
 
-		clearInterval(timer);
-		clearTimeout(deleteFirstPhotoDelay);
+
+
+		currentPosition++;
 
 
 
 	}
 	function nextSlide() {
 		document.getElementById("slideShow").insertAdjacentHTML("beforeend", `<div class="slide" style="background-image: url(${images[currentPosition]}); "id="slide"></div>`)
-		deleteFirstPhotoDelay = setTimeout(function () {
+		setTimeout(function () {
 			document.querySelector(".slide").remove()
 
 		}, 1000)
