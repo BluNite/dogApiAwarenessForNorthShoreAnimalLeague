@@ -68,3 +68,9 @@ a {
 footer {
   text-align: right;
 }
+
+#northImage {
+  width: 350px;
+  height: 60px;
+  border-radius: 15px;
+}
