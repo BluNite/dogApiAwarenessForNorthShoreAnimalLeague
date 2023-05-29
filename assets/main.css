@@ -9,20 +9,23 @@ body {
 .header {
   margin: 0%;
   text-align: center;
-  font-size: 25px;
+
   color: rgb(20, 57, 87);
   background-color: rgb(163, 163, 171);
+}
+h2 {
+  font-size: 35px;
 }
 select {
   font-size: 18px;
 }
 img {
-  border-radius: 2px;
+  border-radius: 4px;
   margin-top: 0;
 }
 #dogJpg {
-  width: 35px;
-  height: 35px;
+  width: 45px;
+  height: 45px;
 }
 a {
   padding-left: 35px;
@@ -40,8 +43,9 @@ a {
   width: 100vw;
   height: 100vh;
 
-  transition: ease-in 1.9s;
-  transition: ease-out 1.9s;
+  transition: ease-in 4s;
+  transition: ease-out 4s;
+  transform: (1);
   margin-bottom: 0%;
 }
 .slide {
@@ -54,11 +58,19 @@ a {
   background-position: center center;
   opacity: 0;
   transform: scale(1);
-  transition: ease-in 1.5s;
+  transition: ease-in 4s;
+  transition: ease-out 4s;
   background-size: contain;
 }
 .slide:nth-last-child(2) {
   opacity: 1;
-  transform: scale(1.08);
-  transition: ease-in;
+}
+footer {
+  text-align: right;
+}
+
+#northImage {
+  width: 350px;
+  height: 60px;
+  border-radius: 15px;
 }

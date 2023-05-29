@@ -18,8 +18,8 @@ async function start() {
 		const response = await fetch("https://dog.ceo/api/breeds/list/all")
 		//parse into json format so readable
 		const data = await response.json();
-		//  
-		createBreedList(data.message)
+		//  function takes data and property message
+		getBreedList(data.message)
 
 
 
@@ -35,12 +35,7 @@ async function start() {
 
 
 
-	//await creates asynchronous action fetch resolves its promise once resolved
-	const response = await fetch("https://dog.ceo/api/breeds/list/all")
-	//parse into json format so readable
-	const data = await response.json();
-	//the 2 arguments for createBreedList function // data and 'message' property from fetch request 
-	createBreedList(data.message)
+
 
 
 }
@@ -52,7 +47,7 @@ start();
 //template literals to get html 
 //object function takes keys method parameter then map function to cover entire array creates select element with option element to list different breeds
 // join method to separate commas between strings/arrays returns list of breeds for selection 
-function createBreedList(breedList) {
+function getBreedList(breedList) {
 
 	document.getElementById("breed").innerHTML = `
 	<select onchange="loadByBreed(this.value)">
@@ -100,7 +95,7 @@ function createSlideShow(images) {
 		currentPosition += 2
 
 		// set interval timer next image function every 5 seconds
-		timer = setInterval(nextSlide, 5000);
+		timer = setInterval(nextSlide, 4000);
 
 
 
