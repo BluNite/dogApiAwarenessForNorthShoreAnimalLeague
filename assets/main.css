@@ -43,8 +43,8 @@ a {
   width: 100vw;
   height: 100vh;
 
-  transition: ease-in 1s;
-  transition: ease-out 1.9s;
+  transition: ease-in 4s;
+  transition: ease-out 4s;
   margin-bottom: 0%;
 }
 .slide {
@@ -57,11 +57,13 @@ a {
   background-position: center center;
   opacity: 0;
   transform: scale(1);
-  transition: ease-in 1.5s;
+  transition: ease-in 4s;
+  transition: ease-out 4s;
   background-size: contain;
 }
 .slide:nth-last-child(2) {
   opacity: 1;
-  transform: scale(1.08);
-  transition: ease-in;
+}
+footer {
+  text-align: right;
 }
