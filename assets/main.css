@@ -45,6 +45,7 @@ a {
 
   transition: ease-in 4s;
   transition: ease-out 4s;
+  transform: (1);
   margin-bottom: 0%;
 }
 .slide {
