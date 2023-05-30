@@ -22,6 +22,7 @@ select {
 img {
   border-radius: 4px;
   margin-top: 0;
+  margin-left: 5px;
 }
 #dogJpg {
   width: 45px;
