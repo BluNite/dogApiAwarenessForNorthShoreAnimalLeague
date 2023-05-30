@@ -42,28 +42,35 @@ a {
   background-color: rgb(123, 120, 120);
   width: 100vw;
   height: 100vh;
-
-  transition: ease-in 4s;
-  transition: ease-out 4s;
-  transform: (1);
+  margin-top: 0%;
+  transition: all ease-in-out 2.9s;
+  background-size: contain;
+  transform: scale(1);
   margin-bottom: 0%;
+  background-size: contain;
 }
 .slide {
   padding: 150px;
   background-repeat: no-repeat;
-
-  margin-bottom: 0%;
-
-  margin-top: 45px;
+  background-size: contain;
+  margin-bottom: 025px;
+  margin-top: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   background-position: center center;
   opacity: 0;
+  transition: all ease-in-out 4s;
   transform: scale(1);
-  transition: ease-in 4s;
-  transition: ease-out 4s;
+
   background-size: contain;
 }
 .slide:nth-last-child(2) {
   opacity: 1;
+  transform: scale(1);
+  background-size: contain;
+  transition: all ease-in-out 3s;
 }
 footer {
   text-align: right;

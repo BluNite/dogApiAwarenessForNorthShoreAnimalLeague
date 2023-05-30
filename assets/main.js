@@ -1,7 +1,7 @@
 // global variables for time functions
 
 let timer
-let deleteFirstPhotoDelay
+let deletePhotoPause
 
 
 
@@ -51,19 +51,19 @@ function getBreedList(breedList) {
 
 	document.getElementById("breed").innerHTML = `
 	<select onchange="loadByBreed(this.value)">
-	<option>choose a dog breed</option>
+	<option>Choose A Dog Breed</option>
 	
 ${Object.keys(breedList).map(function (breed) {
 		return `<option>${breed}</option>`
 	}).join('')}
 	</select>
 `}
-//async function to load breed objects
+//async function to load breed array
 async function loadByBreed(breed) {
 	// condition set to disable choose a dog breed choice
 
-	if (breed != "choose a dog breed") {
-		// response  is await  fetch function to get breed images objects
+	if (breed != "Choose A Dog Breed") {
+		// response  is await  fetch function to get breed images array
 
 		const response = await fetch(`https://dog.ceo/api/breed/${breed}/images`)
 		//await response parsed as json
@@ -80,30 +80,29 @@ function createSlideShow(images) {
 	console.log(images.length)
 	// counter for current position of image array
 	let currentPosition = 0;
+	clearInterval(timer)
+	clearTimeout(deletePhotoPause)
 
 
 
-	//  if more than one image increase current image counter by 2
-	if (images.length > 1) {
+	// get slideshow element / innerhtml is slide element/ use back ticks to dynamically render images to url 2 photos loaded to transition
+	document.getElementById('slideShow').innerHTML =
+		//template literals surround div elements use backticks for url/ images argument for two photos for loading
+		` <div class="slide" style=" background-image: url('${images[0]}'); "id="slide"></div> 
 
-		// get slideshow element / innerhtml is slide element/ use back ticks to dynamically render images to url 2 photos loaded to transition
-		document.getElementById('slideShow').innerHTML =
+			<div class="slide" style="background-image: url('${images[1]}'); "id="slide"></div> `
+	currentPosition += 2
 
-			` <div class="slide" style=" background-image: url(${images[0]}); "id="slide"></div> 
-
-			<div class="slide" style="background-image: url(${images[1]}); "id="slide"></div> `
-		currentPosition += 2
-
-		// set interval timer next image function every 5 seconds
-		timer = setInterval(nextSlide, 4000);
-
-
-
+	// set interval timer next image function every 5 seconds
+	timer = setInterval(nextSlide, 3000);
 
 
 
 
-	}
+
+
+
+
 
 	if (images.length == 2) currentPosition = 0
 
@@ -124,12 +123,15 @@ function createSlideShow(images) {
 
 
 	}
+	//function to change to next slide 
 	function nextSlide() {
-		document.getElementById("slideShow").insertAdjacentHTML("beforeend", `<div class="slide" style="background-image: url(${images[currentPosition]}); "id="slide"></div>`)
-		setTimeout(function () {
-			document.querySelector(".slide").remove()
+		// insert adjacent HTML to add 
+		document.getElementById("slideShow").insertAdjacentHTML("beforeend", `<div class="slide" style="background-image: url('${images[currentPosition]}'); "id="slideShow"></div>`)
+		deletePhotoPause = setTimeout(function () {
+			document.querySelector(".slide").remove();
 
 		}, 1000)
+		//when only one image left in a collection set currentPosition to = 0 or add one 
 		if (currentPosition + 1 >= images.length) {
 			currentPosition = 0
 		} else {
