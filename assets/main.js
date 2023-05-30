@@ -51,7 +51,7 @@ function getBreedList(breedList) {
 
 	document.getElementById("breed").innerHTML = `
 	<select onchange="loadByBreed(this.value)">
-	<option>choose a dog breed</option>
+	<option>Choose A Dog Breed</option>
 	
 ${Object.keys(breedList).map(function (breed) {
 		return `<option>${breed}</option>`
@@ -62,7 +62,7 @@ ${Object.keys(breedList).map(function (breed) {
 async function loadByBreed(breed) {
 	// condition set to disable choose a dog breed choice
 
-	if (breed != "choose a dog breed") {
+	if (breed != "Choose A Dog Breed") {
 		// response  is await  fetch function to get breed images objects
 
 		const response = await fetch(`https://dog.ceo/api/breed/${breed}/images`)
