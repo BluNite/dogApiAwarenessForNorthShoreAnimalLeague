@@ -5,7 +5,8 @@
 
 
 <img src="assets/north-shore-animal-555x132.jpg"/>
-##  <a href="https://www.animalleague.org">Link</a>
+    <a href="https://www.animalleague.org">Link North Shore Animal League</a>
+
 
 ## Task
 
