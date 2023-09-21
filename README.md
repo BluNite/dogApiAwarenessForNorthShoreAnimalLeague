@@ -1,6 +1,6 @@
 # Dog Lovers App
 
-# https://blunite.github.io/dogApiAwarenessForNorthShoreAnimalLeague/
+#  Deployed at https://blunite.github.io/dogApiAwarenessForNorthShoreAnimalLeague/
 
 
 
@@ -17,7 +17,7 @@
 
 ```
 
-## Project Description current issues
+## Video example:
 
 <img src="assets/DogApiApp.gif" width="640" height="480" />
 
