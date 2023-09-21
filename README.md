@@ -10,7 +10,7 @@
 
 ```
  practice retrieving remote API's data with async fetch function and await
-  and find creative ways to use and improve upon,
+  and find creative ways to use and improve upon.
 
 
 ```
