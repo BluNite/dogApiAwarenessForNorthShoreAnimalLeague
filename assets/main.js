@@ -1,63 +1,50 @@
 // global variables for time functions
+let timer;
+let deletePhotoPause;
 
-let timer
-let deletePhotoPause
+// fetch function (async)
 
-
-
-
-
-// async before function 
-
-
-async function start() {
+async function startFetch() {
 	//try 
 	try {
-
-		//await creates asynchronous action fetch resolves its promise once resolved
+		// await creates asynchronous action fetch resolves its promise once resolved
 		const response = await fetch("https://dog.ceo/api/breeds/list/all")
 		//parse into json format so readable
 		const data = await response.json();
 		//  function takes data and property message
 		getBreedList(data.message)
-
-
-
-
 	}
 	//catch for error (e) for older browsers
 	catch (e) {
 
 		console.log("error! Breed List not fetched")
-
-
-	}
-
-
-
-
-
-
-}
+	};
+};
 //call start function here
-start();
+startFetch();
 
 // takes data and creates drop down of dogs info
 //object function .keys to get properties in object / use map to dynamically create new options and use join to separate 
 //template literals to get html 
 //object function takes keys method parameter then map function to cover entire array creates select element with option element to list different breeds
 // join method to separate commas between strings/arrays returns list of breeds for selection 
-function getBreedList(breedList) {
+f
 
+
+function getBreedList(breedList) {
+	// dynamically create html to be rendered 
 	document.getElementById("breed").innerHTML = `
 	<select onchange="loadByBreed(this.value)">
 	<option>Choose A Dog Breed</option>
-	
+
 ${Object.keys(breedList).map(function (breed) {
+		//in  backticks
 		return `<option>${breed}</option>`
+		// convert the array into one single line of text
 	}).join('')}
-	</select>
-`}
+	
+	</select> `
+}
 //async function to load breed array
 async function loadByBreed(breed) {
 	// condition set to disable choose a dog breed choice
@@ -70,8 +57,7 @@ async function loadByBreed(breed) {
 		const data = await response.json()
 		//function takes 2 arguments data and message from api object
 		createSlideShow(data.message)
-
-	}
+	};
 
 }
 // function for images to appear
@@ -94,20 +80,10 @@ function createSlideShow(images) {
 	currentPosition += 2
 
 	// set interval timer next image function every 5 seconds
-	timer = setInterval(nextSlide, 3000);
-
-
-
-
-
-
-
+	timer = setInterval(nextSlide, 2500);
 
 
 	if (images.length == 2) currentPosition = 0
-
-
-
 
 	else {
 		document.getElementById('slideShow').innerHTML =
@@ -116,13 +92,9 @@ function createSlideShow(images) {
 
 			<div class="slide" </div> `
 
-
-
 		currentPosition++;
-
-
-
 	}
+
 	//function to change to next slide 
 	function nextSlide() {
 		// insert adjacent HTML to add 
