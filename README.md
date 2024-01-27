@@ -19,6 +19,8 @@
 
 ## Video example:
 
-<img src="assets/DogApiApp.gif" width="640" height="480" />
+
+
+https://drive.google.com/file/d/1VSPG6r1ZYTwyWkSKpKHA-IvppmHkzM9j/preview
 
 ## <a href="https://www.animalleague.org">link</a>
